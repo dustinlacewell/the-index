@@ -1,0 +1,56 @@
+{% extends "base_index.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div id="content" class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y centered">
+    <div class="medium-11 cell">
+      <center>
+        <h1>{{ self.title }}</h1>
+        <h2>{{ self.subtitle }}</h2>
+        {{ self.content|richtext }}
+      </center>
+    </div>
+
+    <br>
+
+    {% for move in moves %}
+    <div class="medium-3 cell" data-equalizer-watch>
+      <a href="{% pageurl move %}">
+        <div class="card text-center" style="border-radius: 5px;">
+          <div class="card-section" style="padding: 5px;">
+            {% image move.image fill-400x400 %}
+            <h3 style="padding: 8px 0;"><strong>{{ move.title}}</strong></h6>
+            <p>{{ move.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if moves.has_other_pages %}
+  <div class="hide-for-print medium-12 cell">
+    <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+      {% if moves.has_previous %}
+      <li class="pagination-previous">
+        <a href="?page={{ moves.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" aria-label="Previous page">Previous</a>
+      </li>
+      {% else %}
+      <li class="pagination-previous disabled">Previous</li>
+      {% endif %}
+
+      <li class="unavailable">Page {{ moves.number }} of {{ moves.paginator.num_pages }}</li>
+
+      {% if moves.has_next %}
+      <li class="pagination-next">
+        <a href="?page={{ moves.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" aria-label="Next page">Next</a>
+      </li>
+      {% else %}
+      <li class="pagination-next disabled">Next</li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

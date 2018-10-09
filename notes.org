@@ -1,0 +1,203 @@
+
+* Overview
+The Index is a private CMS for magicians to share information on the
+performance and history of all forms of magic.
+
+Its core content is organized as a tree of interlinked pages. Pages come in the
+form of a few core page-types such as People, Routines, and Events. Each
+page-type may feature, in addition to standard textual content, type-specific
+information. For example, People pages may include birth dates and country of
+origin.
+
+Page-types are accessible via a global menu which lists them. Each links to an
+index page for that page type. The listing pages for each page-type may vary
+from one to the next, but in general, they list all of the top-level content
+pages for that page-type. So clicking on "Moves" from the menu brings you to a
+paginated listing page with with all the moves in The Index. Listing pages have
+filtering and search options allowing the user to narrow by tag, category,
+full-text search, or page-relationship data (described later).
+
+Content pages each feature an associated comment discussion thread where
+content moderation and editorialization can take place. They may also feature
+attached media such as images, audio, and video.
+
+Each content page can also have any number of user created and owned sub-pages
+which feature personal notes, variations, or any other personally-curated work
+which is related to the content of the parent page. These sub-pages are listed
+on the main content page. #TODO What page types should be allowed for
+sub-pages? Should there be community-owned sub-pages?
+
+Between page-types there also exist special page-to-page relationships. These
+relations between pages can carry additional information. For example, between
+Routines and Books there can be a Feature relationship type. This means that
+someone can establish a relationship between the "Three Card Monte" Routine and
+the Book "Expert At The Card Table", in which it is featured. That relationship
+can contain information about where in the book the routine is described. Every
+relationship type can contain different information. These relationships can be
+displayed on content pages and integrated into search functionality, improving
+the discoverability of information within The Index.
+
+With this system the community of The Index will be able to accumulate
+knowledge on the art. In this we can fend against the loss of that knowledge
+due to the death of individuals and insitutions.
+
+
+* Feature Roadmap
+
+** News [0/2]
+We want to be able to communicate to users through a simple news/blog like
+mechanism. Simple blogs like this are the bread and butter of Wagtail so this
+shouldn't be any issue.
+
+- [ ] News Admin
+  Admins need to be able to write and publish items.
+- [ ] News Frontend
+  Users gotta be able to see the items on the frontend.
+
+** Users [0/2]
+- [ ] Login Page
+  Users gotta be able to login.
+- [ ] Password Reset
+  Users are gonna forget their password.
+- [ ] Email Verification
+  This is probably just a good idea. Maybe this is part of the signup process
+  after invitation is received.
+- [ ] User Invitations
+  We need a way to invite people to the site.
+
+***  Profile [0/2]
+Having a simple page for people to say something about themselves will probably
+go a long way. Eventually it will be a straight-forward matter to allow people
+to publish news/blog items to their own profile page, and potentially upload
+or at least embed videos of their progress on things they are working and so
+on.
+- [ ] Profile Page
+- [ ] Profile Editing
+
+*** Permissions [0/0]
+There needs to be at least three modes of separation between various user
+accounts; admins, moderators, and users. We can break it down further to
+reflect things like special access to media and method information but
+these are probably required upfront. Admins are people involved with the
+software-management of deploying the site, moderators are any other kind of
+special user, and normal users are just everyone else.
+
+- [ ] Groups
+- [ ] Page Edit Restrictions
+- [ ] Page View Restrictions
+
+**  Pages [0/3]
+Pages are the core content of The Index.
+
+- [ ] Top-level Page-Types [0/7]
+  All pages are centered around regular textual prose content - but each page
+  has a specific page-type. Each page-types has different special fields where
+  additional information can be supplied. Books have publish dates, People have
+  birth dates, and so on.
+
+  - [ ] People
+  - [ ] Moves
+  - [ ] Routines
+  - [ ] Props
+  - [ ] Print
+  - [ ] Video
+  - [ ] Events
+
+- [ ] Listing Pages [0/3]
+  Listing pages list all of the top-level pages and sub-pages of a given page
+  type. We need listing pages for each page-type.
+  - [ ] Filtering [0/2]
+    - [ ] Tag
+    - [ ] Category
+  - [ ] Searching
+  - [ ] Sorting
+
+- [ ] Content Pages [0/4]
+  - [ ] Sidebars
+    Each page-type has page-type unique information. We should display this
+    information in a sidebar to the main text content.
+  - [ ] Media
+    Image and Video attachments/embeds should be easy to add to any page.
+  - [ ] Sub-pages
+    Each top-level page should support having sub-pages added and owned by users.
+  - [ ] Comments
+    Each page should have a comment section where discussion about the page can
+    take place. This is like the wikipedia discussion tab where
+    editorialization can get sorted out.
+
+.
+
+* Categories
+Categories are used to associate content with the classic categories of
+magic. The description for the categories is just a best effort, there are
+always exceptions and grey areas. That said, categories are not user-generated.
+
+- Stage Magic
+  You gotta get to the performance before-hand and set things up.
+- Close-up Magic
+  You're sitting at a table while performing.
+- Walk-around Magic
+  You're performing while standing to one or more spectators.
+- Card Magic
+  The trick primarily involes cards.
+- Coin Magic
+  The trick primarily involves coins.
+- Mentalism
+  The trick primarily involves mental acts.
+- Prop Magic
+  The trick primarily involves some kind of non-card or non-coin prop.
+.
+
+* Tags
+Tags are used to associate content with large variety of properties one might
+use to describe something to someone in an elevator. These short textual words
+or phrases are user-generated and can express everything from whether gimmicks
+are involved, to whether a trick is difficult, or expensive, or beautiful, or
+cheesy, or whatever it may be. 
+
+
+* Page Types
+
+** People
+This page type encompasses anyone from magicians, to video producers, even
+organizers, club presidents, and even institutions like manufacturers and publishers.
+
+- Full name
+- Birth Country
+- Birth Date
+- Death Date
+- Website
+- Email Address
+
+
+** Moves
+
+** Routines
+
+** Props
+
+** Print Media
+- Publish Date
+- Website
+
+** A/V Media
+- Publish Date
+- Website
+
+** Events
+- Date
+- Location
+
+*  Relationships
+
+Various interpage relationships form the content discoverability of The
+Index. There are numerous page relationships as can be seen by the table below.
+
+
+|          | People               | Moves                    | Routines                 | Books    | Videos                 |
+| People   | -                    | -                        | -                        | -        | -                      |
+| Moves    | Creator              | -                        | -                        | -        | -                      |
+| Routines | Creator              | Featured                 | -                        | -        | -                      |
+| Books    | Author, Editor       | Featured                 | Description, Explanation | -        | -                      |
+| Videos   | Performer, Producer  | Performance, Explanation | Performance, Explanation | Featured | -                      |
+| Events   | Performer, Organizer | Performance              | Performance              | Featured | Performance, Recording |

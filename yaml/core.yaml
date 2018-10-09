@@ -1,0 +1,53 @@
+url: /index
+type: pages.homepage
+title: Welcome to The Index
+
+---
+
+url: /index/people
+type: people.personindexpage
+title: People and Organizations
+subtitle: A listing of everyone in the Index.
+
+---
+
+url: /index/people/alex-elmsley
+type: people.personpage
+title: Alex Elmsley
+info:
+  - type: birthplace
+    value: St. Andrews, Scotland
+  # - type: birth_date
+  #   value: 2017-12-19
+  # - type: death_date
+  #   value: 0
+  - type: website
+    value: https://en.wikipedia.org/wiki/Alex_Elmsley
+content: |
+  <p>Alex Elmsley was a Scottish magician and computer programmer. He was
+  notable for his invention of the Ghost Count or Elmsley Count, creating
+  mathematical card tricks, and for publishing the mathematics of playing card
+  shuffling.</p>
+
+---
+
+url: /index/moves
+type: moves.moveindexpage
+title: Moves and Sleights
+subtitle: A listing of all moves in the Index.
+
+---
+
+url: /index/moves/elmsley-count
+type: moves.movepage
+title: Elmsley Count
+description: A false count (often done with four cards) where the surface of a card is hidden while the cards are passed from one hand to another.
+info:
+  - type: content
+    value: |
+      <p>Now you show your four cards to be all face-down, by counting them one
+      at a time, using the Four-as-Four-move. This move is an ingenious
+      adaption by Alex Elmsley of a move first given to us by Edward 'Victor in
+      his "E-Y-E" effect. The Four-as-Four move was described in Dai's "More
+      Inner Secrets of Card Magic", but to be complete I will give it
+      again.</p>

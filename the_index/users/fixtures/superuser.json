@@ -1,0 +1,21 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "argon2$argon2i$v=19$m=512,t=2,p=2$NDZwZXhvVnl0ZVBC$3a+j3afkV/pCBOActfHShw",
+            "last_login": "2018-10-05T23:55:16.544Z",
+            "is_superuser": true,
+            "username": "ldlework",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2018-10-05T23:54:55.927Z",
+            "name": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "the_index",
+  "version": "0.0.0",
+    "dependencies": {
+      "foundation-sites": "6.5.0-rc.2",
+      "motion-ui": "~2.0.3"
+    },
+    "devDependencies": {},
+    "engines": {
+      "node": ">=0.10.0"
+    }
+  }

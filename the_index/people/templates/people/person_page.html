@@ -1,0 +1,23 @@
+{% extends "people/person_base.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block people_content %}
+    {% if self.image %}
+        {% image self.image width-180 as photo %}
+        <img src="{{ photo.url }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt }}" class="img-thumbnail" style="float: left; margin-right: 15px; border-radius: 5px;" />
+    {% endif %}
+
+    <h3>{{ self.title }}</h3>
+
+    <ul>
+      {% for block in self.info %}
+      <li>{{ block }}</li>
+      {% endfor %}
+    </ul>
+
+    {% if self.content %}
+        {{ self.content|richtext }}
+    {% endif %}
+
+    <br>
+{% endblock %}
